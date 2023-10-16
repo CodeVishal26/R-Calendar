@@ -27,18 +27,6 @@ const Calendar = (props) => {
     setDateContext(newDateContext);
   };
 
-  const nextMonth = () => {
-    const newDateContext = moment(dateContext).add(1, 'month');
-    setDateContext(newDateContext);
-    props.onNextMonth && props.onNextMonth();
-  };
-
-  const prevMonth = () => {
-    const newDateContext = moment(dateContext).subtract(1, 'month');
-    setDateContext(newDateContext);
-    props.onPrevMonth && props.onPrevMonth();
-  };
-
   const onSelectChange = (e, data) => {
     setMonth(data);
     props.onMonthChange && props.onMonthChange();
@@ -173,10 +161,6 @@ const Calendar = (props) => {
               <MonthNav />
               {' '}
               <YearNav />
-            </td>
-            <td colSpan="2" className="nav-month">
-              <i className="prev fa fa-fw fa-chevron-left" onClick={prevMonth} />
-              <i className="prev fa fa-fw fa-chevron-right" onClick={nextMonth} />
             </td>
           </tr>
         </thead>
